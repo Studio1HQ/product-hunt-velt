@@ -21,7 +21,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import useTheme, { ThemeToggleButton } from "./theme-toggle";
+import useTheme, { ThemeToggleButton } from "../hooks/theme-toggle";
 
 export function Header() {
   const navigationItems = [

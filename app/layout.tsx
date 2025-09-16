@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/theme-toggle";
+import { ThemeProvider } from "@/hooks/theme-toggle";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";

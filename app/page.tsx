@@ -1,11 +1,11 @@
 "use client";
-import { Header } from "@/components/header";
-import { ProductHero } from "@/components/product-hero";
-import { ProductTabs } from "@/components/product-tabs";
-import { ProductSidebar } from "@/components/product-sidebar";
-import { CommentSection } from "@/components/comment-section";
-import { SimilarProducts } from "@/components/similar-products";
+import { ProductHero } from "@/components/(general)/product-hero";
+import { ProductTabs } from "@/components/(general)/product-tabs";
+import { ProductSidebar } from "@/components/(general)/product-sidebar";
+import { CommentSection } from "@/components/(general)/comment-section";
 import { VeltProvider } from "@veltdev/react";
+import { Header } from "@/components/header";
+import { SimilarProducts } from "@/components/similar-products";
 
 // Mock data for the product
 const productData = {

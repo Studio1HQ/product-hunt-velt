@@ -14,7 +14,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { VeltInlineCommentsSection } from "@veltdev/react";
-import useTheme from "./theme-toggle";
+import useTheme from "../../hooks/theme-toggle";
+
 
 interface CommentSectionProps {
   productId: string;
