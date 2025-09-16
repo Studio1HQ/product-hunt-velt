@@ -39,15 +39,7 @@ const mockComments = [
 ];
 
 export function CommentSection({ productId }: CommentSectionProps) {
-  const [newComment, setNewComment] = useState("");
-  const [comments, setComments] = useState(mockComments);
-
-  const handleSubmitComment = () => {
-    if (!newComment.trim()) return;
-
-    // Add new comment logic here
-    setNewComment("");
-  };
+  const [comments] = useState(mockComments);
   const { theme } = useTheme();
   return (
     <Card>

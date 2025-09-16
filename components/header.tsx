@@ -94,11 +94,11 @@ export function Header() {
         console.log("Velt user identified:", veltUser.userId);
         await client.setDocuments([
           {
-            id: "typefully-comments",
-            metadata: { documentName: "typefully-comments" },
+            id: "product-hunt-velt",
+            metadata: { documentName: "product-hunt-velt" },
           },
         ]);
-        console.log("Velt documents set: typefully-comments");
+        console.log("Velt documents set: product-hunt-velt");
       } catch (error) {
         console.error("Error initializing Velt:", error);
       } finally {
