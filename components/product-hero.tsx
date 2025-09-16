@@ -113,7 +113,7 @@ export function ProductHero({ product }: ProductHeroProps) {
               </div>
             </div>
 
-            <div className="flex flex-col items-center space-y-4 ml-6">
+            <div className="hidden lg:flex flex-col items-center space-y-4 ml-6">
               {/* Ranking */}
               <div className="text-center">
                 <div className="text-sm text-muted-foreground mb-1">
