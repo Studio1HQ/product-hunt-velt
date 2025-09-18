@@ -79,7 +79,7 @@ export function ProductHero({ product }: ProductHeroProps) {
                   {product.name}
                 </h1>
                 {product.launchingToday && (
-                  <Badge className="bg-orange-500 hover:bg-orange-600 text-white">
+                  <Badge className="bg-orange-500 hover:bg-orange-600 text-whit max-md:hidden">
                     Launching today
                   </Badge>
                 )}
@@ -114,27 +114,14 @@ export function ProductHero({ product }: ProductHeroProps) {
             </div>
 
             <div className="hidden lg:flex flex-col items-center space-y-4 ml-6">
-              {/* Ranking */}
-              <div className="text-center">
-                <div className="text-sm text-muted-foreground mb-1">
-                  Launching Today
-                </div>
-                <div className="text-4xl font-bold text-orange-600">
-                  #{product.rank}
-                </div>
-                <div className="text-xs text-muted-foreground">
-                  {product.dayRank}
-                </div>
-              </div>
 
               {/* Visit Website */}
-              <Button variant="outline" className="w-full" asChild>
+              <Button variant="outline" className="w-full rounded-full" asChild>
                 <a
                   href={product.website}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
                   Visit website
                 </a>
               </Button>

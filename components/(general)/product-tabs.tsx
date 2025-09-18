@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductTabsProps {
   product: {
@@ -30,50 +30,61 @@ interface ProductTabsProps {
 
 export function ProductTabs({ product }: ProductTabsProps) {
   return (
-    <Tabs defaultValue="overview" className="w-full">
-      <TabsList className="grid w-full grid-cols-6 max-md:grid-cols-3 overflow-hidden">
-        <TabsTrigger value="overview">Overview</TabsTrigger>
-        <TabsTrigger value="launches">
-          Launches{" "}
-          <Badge variant="secondary" className="ml-1">
-            2
-          </Badge>
-        </TabsTrigger>
-        <TabsTrigger value="reviews">
-          Reviews{" "}
-          <Badge variant="secondary" className="ml-1">
-            7
-          </Badge>
-        </TabsTrigger>
-        <TabsTrigger value="alternatives">Alternatives</TabsTrigger>
-        <TabsTrigger value="team">Team</TabsTrigger>
-        <TabsTrigger value="more">More</TabsTrigger>
-      </TabsList>
-
-      <TabsContent value="overview" className="space-y-6">
-        <ShownedComponent product={product} />
-      </TabsContent>
-
-      <TabsContent value="launches">
-        <ShownedComponent product={product} />
-      </TabsContent>
-
-      <TabsContent value="reviews">
-        <ShownedComponent product={product} />
-      </TabsContent>
-
-      <TabsContent value="alternatives">
-        <ShownedComponent product={product} />
-      </TabsContent>
-
-      <TabsContent value="team">
-        <ShownedComponent product={product} />
-      </TabsContent>
-
-      <TabsContent value="more">
-        <ShownedComponent product={product} />
-      </TabsContent>
-    </Tabs>
+    <div>
+      <ul className="flex flex-row items-center flex-wrap gap-2">
+        <li>
+          <Link
+            className="rounded-full px-4 py-2 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2 bg-gray-200 text-gray-700"
+            href={"#"}
+          >
+            <span className="text-sm font-semibold">Overview</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
+            href={"#"}
+          >
+            <span className="text-sm font-semibold">Reviews</span>
+            <span className="box-border rounded-full bg-gray-50 px-2 py-0.5 text-14/4 font-semibold outline outline-1 outline-gray-200">
+              2
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
+            href={"#"}
+          >
+            <span className="text-sm font-semibold">Alternatives</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
+            href={"#"}
+          >
+            <span className="text-sm font-semibold">Team</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
+            href={"#"}
+          >
+            <span className="text-sm font-semibold">Awards</span>
+          </Link>
+        </li>
+        <li>
+          <Link href={"#"} data-test="product-more-btn">
+            <span className="text-14 font-semibold text-dark-gray rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:text-gray-700 hover:!bg-gray-200">
+              More
+            </span>
+          </Link>
+        </li>
+      </ul>
+      <ShownedComponent product={product} />
+    </div>
   );
 }
 
@@ -90,7 +101,7 @@ const ShownedComponent = ({ product }: ProductTabsProps) => {
     );
   };
   return (
-    <Card className="border-2 border-orange-200 dark:border-orange-800">
+    <Card className="border-none">
       <CardContent className="p-6">
         <div className="relative">
           <div className="aspect-video bg-muted rounded-lg overflow-hidden relative">
@@ -167,13 +178,16 @@ const ShownedComponent = ({ product }: ProductTabsProps) => {
               </div>
               <div className="flex -space-x-2">
                 {product.makers.map((maker) => (
-                  <Avatar
+                  <Link
+                    href={"#"}
                     key={maker.id}
                     className="h-8 w-8 border-2 border-background"
                   >
-                    <AvatarImage src={maker.avatar} alt={maker.name} />
-                    <AvatarFallback>{maker.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
+                    <Avatar>
+                      <AvatarImage src={maker.avatar} alt={maker.name} />
+                      <AvatarFallback>{maker.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                  </Link>
                 ))}
               </div>
               <Button variant="outline" size="sm">

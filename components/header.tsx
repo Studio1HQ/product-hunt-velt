@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, User } from "lucide-react";
+import { ChevronDown, Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -22,6 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import useTheme, { ThemeToggleButton } from "../hooks/theme-toggle";
+import { Input } from "./ui/input";
 
 export function Header() {
   const navigationItems = [
@@ -113,30 +114,38 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="px-16 max-md:px-3 max-md:container mx-auto flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-1 justify-evenly items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded bg-orange-500 flex items-center justify-center">
+            <div className="h-8 w-8 bg-orange-500 flex items-center justify-center rounded-full">
               <span className="text-white font-bold text-lg">P</span>
             </div>
-            <span className="hidden font-bold sm:inline-block">
-              ProductHunt
-            </span>
           </Link>
-
+          {/* Search */}
+          <div className="max-md:hidden max-w-32 mr-8">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input
+                type="search"
+                placeholder="Search ( ⌘ + k )"
+                className="pl-10 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-sm rounded-full"
+              />
+            </div>
+          </div>
           <nav className="hidden md:flex items-center space-x-6">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                href={"#"}
+                className="text-sm font-medium text hover:text-foreground transition-colors flex items-center gap-2"
               >
                 {item.name}
+                <ChevronDown className="text-gray-400 h-4 w-4" />
               </Link>
             ))}
           </nav>
         </div>
 
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex items-center justify-end space-x-4">
           <VeltCommentsSidebar darkMode={theme === "dark"} />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
