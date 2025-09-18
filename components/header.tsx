@@ -112,9 +112,11 @@ export function Header() {
   const { theme } = useTheme();
   console.log(theme);
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="px-16 max-md:px-3 max-md:container mx-auto flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="flex flex-1 justify-evenly items-center space-x-4">
+    <header className="mx-auto  sticky top-0 z-50 border-b border bg-background/95">
+      <div className="w-full max-w-7xl max-md:px-3 max-md:container mx-auto flex h-16 gap-6 items-center space-x-4 sm:justify-between sm:space-x-0">
+        <div className="flex flex-1 justify-between items-center space-x-4">
+          <div className="space-x-4 flex">
+
           <Link href="/" className="flex items-center space-x-2">
             <div className="h-8 w-8 bg-orange-500 flex items-center justify-center rounded-full">
               <span className="text-white font-bold text-lg">P</span>
@@ -130,6 +132,7 @@ export function Header() {
                 className="pl-10 bg-gray-50 dark:bg-black border-gray-200 dark:border-white/30 text-sm rounded-full"
               />
             </div>
+          </div>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             {navigationItems.map((item) => (
