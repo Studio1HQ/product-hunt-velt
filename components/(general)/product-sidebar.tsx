@@ -32,23 +32,23 @@ interface ProductSidebarProps {
 
 export function ProductSidebar({ product }: ProductSidebarProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 dark:border dark:border-white/10 p-4 rounded">
       <div>
         <p className="font-semibold">Launching Today</p>
-        <div className="p-4 bg-gray-100 rounded-lg w-3/4 space-y-2">
-          <div className="flex justify-between">
+        <div className="p-4 mt-3 bg-gray-100 dark:bg-black border-gray-200 dark:border dark:border-white/30 rounded-lg w-3/4 space-y-2">
+          <div className="flex justify-between" >
             <div>
               <p className="text-3xl font-medium">#2</p>
               <p className="">Day Rank</p>
             </div>
             <div className="py-3">
-              <div className="flex justify-center rounded-full border-2 border-gray-200 ml-auto">
+              <div className="flex justify-center rounded-full border-2 border-gray-200 ml-auto dark:bg-black dark:border-white/30">
                 <div className="p-2 flex items-center">
                   <button title="Go to previous launch (or press ←)">
                     <ChevronLeft />
                   </button>
                 </div>
-                <div className="w-[2px] bg-gray-200 last:hidden"></div>
+                <div className="w-[2px] bg-gray-200 last:hidden dark:w-[1px] dark:bg-white/30"></div>
                 <div className="p-2 flex items-center">
                   <button title="Go to next launch (or press →)">
                     <ChevronRight />

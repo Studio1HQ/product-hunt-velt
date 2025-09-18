@@ -127,7 +127,7 @@ export function Header() {
               <Input
                 type="search"
                 placeholder="Search ( ⌘ + k )"
-                className="pl-10 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-sm rounded-full"
+                className="pl-10 bg-gray-50 dark:bg-black border-gray-200 dark:border-white/30 text-sm rounded-full"
               />
             </div>
           </div>

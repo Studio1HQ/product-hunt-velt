@@ -79,7 +79,7 @@ export function ProductHero({ product }: ProductHeroProps) {
                   {product.name}
                 </h1>
                 {product.launchingToday && (
-                  <Badge className="bg-orange-500 hover:bg-orange-600 text-whit max-md:hidden">
+                  <Badge className="bg-orange-500 hover:bg-orange-600 text-whit max-md:hidden text-white">
                     Launching today
                   </Badge>
                 )}
