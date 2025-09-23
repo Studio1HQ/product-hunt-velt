@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -112,20 +112,12 @@ const ShownedComponent = ({ product }: ProductTabsProps) => {
               alt="Product screenshot"
               className="rounded-lg object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Button
-                size="lg"
-                className="bg-white/90 hover:bg-white text-black rounded-full w-16 h-16"
-              >
-                <Play className="h-6 w-6 ml-1" />
-              </Button>
-            </div>
 
             {/* Navigation arrows */}
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white hover:text-black"
               onClick={prevImage}
             >
               <ChevronLeft className="h-4 w-4" />
@@ -133,7 +125,7 @@ const ShownedComponent = ({ product }: ProductTabsProps) => {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white hover:text-black"
               onClick={nextImage}
             >
               <ChevronRight className="h-4 w-4" />
@@ -154,7 +146,7 @@ const ShownedComponent = ({ product }: ProductTabsProps) => {
           </div>
         </div>
 
-        <div className="mt-6 space-y-4">
+        <div className="hidden lg:block mt-6 space-y-4">
           <div>
             <h3 className="font-semibold mb-2">Free Options</h3>
             <div className="flex items-center space-x-2">

@@ -14,11 +14,11 @@ const productData = {
   tagline: "Launch your store in minutes. Stripe-native. Built for AI.",
   description:
     "Your Next Store is for founders, brand owners and agencies who want to launch and run a modern, high-performance online store without the plugin bloat and limitations of platforms like Shopify. For those who value speed and adaptability.",
-  logo: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=150",
+  logo: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
   images: [
-    "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
     "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
   ],
   votes: 276,
   rank: 1,
@@ -40,7 +40,7 @@ const productData = {
       id: "1",
       name: "Szymon Pruszyński",
       avatar:
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "https://avatar.iran.liara.run/public/6",
       role: "Maker",
       verified: true,
     },
@@ -48,7 +48,7 @@ const productData = {
       id: "2",
       name: "John Doe",
       avatar:
-        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "https://avatar.iran.liara.run/public/16",
       role: "Co-founder",
     },
   ],

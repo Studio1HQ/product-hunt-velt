@@ -113,26 +113,25 @@ export function Header() {
   console.log(theme);
   return (
     <header className="mx-auto  sticky top-0 z-50 border-b border bg-background/95">
-      <div className="w-full max-w-7xl max-md:px-3 max-md:container mx-auto flex h-16 gap-6 items-center space-x-4 sm:justify-between sm:space-x-0">
+      <div className="w-full max-w-7xl max-md:px-3 max-md:container mx-auto flex h-16 gap-1  lg:gap-6 items-center space-x-4 sm:justify-between sm:space-x-0">
         <div className="flex flex-1 justify-between items-center space-x-4">
           <div className="space-x-4 flex">
-
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 bg-orange-500 flex items-center justify-center rounded-full">
-              <span className="text-white font-bold text-lg">P</span>
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="h-8 w-8 bg-orange-500 flex items-center justify-center rounded-full">
+                <span className="text-white font-bold text-lg">P</span>
+              </div>
+            </Link>
+            {/* Search */}
+            <div className="max-md:hidden max-w-32 mr-8">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                <Input
+                  type="search"
+                  placeholder="Search ( ⌘ + k )"
+                  className="pl-10 bg-gray-50 dark:bg-black border-gray-200 dark:border-white/30 text-sm rounded-full"
+                />
+              </div>
             </div>
-          </Link>
-          {/* Search */}
-          <div className="max-md:hidden max-w-32 mr-8">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input
-                type="search"
-                placeholder="Search ( ⌘ + k )"
-                className="pl-10 bg-gray-50 dark:bg-black border-gray-200 dark:border-white/30 text-sm rounded-full"
-              />
-            </div>
-          </div>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             {navigationItems.map((item) => (
@@ -148,7 +147,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="flex items-center justify-end space-x-4">
+        <div className="flex items-center justify-end gap-2 lg:space-x-4">
           <VeltCommentsSidebar darkMode={theme === "dark"} />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -222,16 +221,18 @@ export function Header() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <VeltPresence />
-          <VeltNotificationsTool darkMode={theme === "dark"} />
+          <div className="hidden lg:flex gap-2">
+            <VeltPresence />
+            <VeltNotificationsTool darkMode={theme === "dark"} />
+          </div>
           <VeltSidebarButton darkMode={theme === "dark"} />
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2">
             <Button variant="outline" className="hidden sm:inline-flex">
               Submit
             </Button>
             <ThemeToggleButton />
             <Avatar className="h-8 w-8">
-              <AvatarImage src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150" />
+              <AvatarImage src="https://avatar.iran.liara.run/public/33" />
               <AvatarFallback>JD</AvatarFallback>
             </Avatar>
           </div>

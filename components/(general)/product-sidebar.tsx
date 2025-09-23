@@ -35,8 +35,8 @@ export function ProductSidebar({ product }: ProductSidebarProps) {
     <div className="space-y-6 dark:border dark:border-white/10 p-4 rounded">
       <div>
         <p className="font-semibold">Launching Today</p>
-        <div className="p-4 mt-3 bg-gray-100 dark:bg-black border-gray-200 dark:border dark:border-white/30 rounded-lg w-3/4 space-y-2">
-          <div className="flex justify-between" >
+        <div className="p-4 mt-3 bg-gray-100 dark:bg-black border-gray-200 dark:border dark:border-white/30 rounded-lg w-full lg:w-3/4 space-y-2">
+          <div className="flex justify-between">
             <div>
               <p className="text-3xl font-medium">#2</p>
               <p className="">Day Rank</p>
@@ -58,7 +58,7 @@ export function ProductSidebar({ product }: ProductSidebarProps) {
               </div>
             </div>
           </div>
-          <Button className="bg-[#ff6154] rounded-full">
+          <Button className="bg-[#ff6154] rounded-full hover:bg-[#ff6154]">
             <div className="flex flex-row flex-nowrap items-center justify-center gap-1 px-4 transition-all duration-300 border-brand-500 bg-brand-500 ">
               <div className="text-base font-semibold leading-none text-white">
                 Upvote • 241 points

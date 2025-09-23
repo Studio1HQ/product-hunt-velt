@@ -16,7 +16,6 @@ import {
 import { VeltInlineCommentsSection } from "@veltdev/react";
 import useTheme from "../../hooks/theme-toggle";
 
-
 interface CommentSectionProps {
   productId: string;
 }
@@ -27,7 +26,7 @@ const mockComments = [
     author: {
       name: "Szymon Pruszyński",
       avatar:
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "https://avatar.iran.liara.run/public/60",
       verified: true,
       role: "Maker",
     },
@@ -51,18 +50,15 @@ export function CommentSection({ productId }: CommentSectionProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="space-y-3">
-          <section id="container-id">
-            <VeltInlineCommentsSection
-              multiThread={true}
-              targetElementId="container-id"
-              shadowDom={false}
-              dialogVariant="dialog-variant"
-              variant="inline-section-variant"
-              darkMode={theme === "dark"}
-            />
-          </section>
-        </div>
+        <VeltInlineCommentsSection
+          // multiThread={true}
+          targetElementId="container-id"
+          // shadowDom={false}
+          // dialogVariant="dialog-variant"
+          // variant="inline-section-variant"
+          darkMode={theme === "dark"}
+        />
+
         {/* Comments List */}
         <div className="space-y-6">
           {comments.map((comment) => (
@@ -97,7 +93,7 @@ export function CommentSection({ productId }: CommentSectionProps) {
                     >
                       {comment.author.role}
                     </Badge>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="max-md:hidden text-xs text-muted-foreground">
                       {comment.timestamp}
                     </span>
                   </div>
@@ -139,6 +135,9 @@ export function CommentSection({ productId }: CommentSectionProps) {
             </div>
           ))}
         </div>
+        <section id="container-id">
+          <div>Your Article</div>
+        </section>
       </CardContent>
     </Card>
   );

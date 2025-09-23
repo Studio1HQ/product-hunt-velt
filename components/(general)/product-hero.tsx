@@ -60,14 +60,14 @@ export function ProductHero({ product }: ProductHeroProps) {
       </Card>
 
       {/* Main Product Info */}
-      <div className="flex items-start space-x-6">
-        <div className="flex-shrink-0">
+      <div className="flex flex-col lg:flex-row items-start lg:space-x-6">
+        <div className="hiddsen lg:flex flex-shrink-0 max-md:w-full mb-3 md:mb-0">
           <Image
             width={100}
             height={100}
             src={product.logo}
             alt={product.name}
-            className="rounded-lg object-cover"
+            className="rounded-lg object-cover max-md:w-full"
           />
         </div>
 
