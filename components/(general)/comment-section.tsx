@@ -25,8 +25,7 @@ const mockComments = [
     id: "1",
     author: {
       name: "Szymon Pruszyński",
-      avatar:
-        "https://avatar.iran.liara.run/public/60",
+      avatar: "https://avatar.iran.liara.run/public/60",
       verified: true,
       role: "Maker",
     },
@@ -56,6 +55,8 @@ export function CommentSection({ productId }: CommentSectionProps) {
           // shadowDom={false}
           // dialogVariant="dialog-variant"
           // variant="inline-section-variant"
+          sortBy="createdAt"
+          sortOrder="desc"
           darkMode={theme === "dark"}
         />
 
