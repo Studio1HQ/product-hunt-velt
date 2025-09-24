@@ -135,14 +135,13 @@ export function Header() {
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             {navigationItems.map((item) => (
-              <Link
+              <div
                 key={item.name}
-                href={"#"}
                 className="text-sm font-medium text hover:text-foreground transition-colors flex items-center gap-2"
               >
                 {item.name}
                 <ChevronDown className="text-gray-400 h-4 w-4" />
-              </Link>
+              </div>
             ))}
           </nav>
         </div>
@@ -231,9 +230,9 @@ export function Header() {
               Submit
             </Button>
             <ThemeToggleButton />
-            <Avatar className="h-8 w-8">
-              <AvatarImage src="https://avatar.iran.liara.run/public/33" />
-              <AvatarFallback>JD</AvatarFallback>
+            <Avatar className="h-6 w-6">
+              <AvatarImage src={user?.photoUrl} />
+              <AvatarFallback>{user?.displayName.split(" ").map(i=>i[0].toUpperCase()).join("")}</AvatarFallback>
             </Avatar>
           </div>
         </div>
