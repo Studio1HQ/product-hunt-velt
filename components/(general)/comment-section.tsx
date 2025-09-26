@@ -137,7 +137,7 @@ export function CommentSection({ productId }: CommentSectionProps) {
           ))}
         </div>
         <section id="container-id">
-          <div>Your Article</div>
+
         </section>
       </CardContent>
     </Card>

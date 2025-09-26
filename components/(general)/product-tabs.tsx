@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
-import Link from "next/link";
 
 interface ProductTabsProps {
   product: {
@@ -33,54 +32,39 @@ export function ProductTabs({ product }: ProductTabsProps) {
     <div>
       <ul className="flex flex-row items-center flex-wrap gap-2">
         <li>
-          <Link
-            className="rounded-full px-4 py-2 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2 bg-gray-200 text-gray-700"
-            href={"#"}
-          >
+          <div className="rounded-full px-4 py-2 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2 bg-gray-200 text-gray-700">
             <span className="text-sm font-semibold">Overview</span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link
-            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
-            href={"#"}
-          >
+          <div className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2">
             <span className="text-sm font-semibold">Reviews</span>
             <span className="box-border rounded-full bg-gray-50 px-2 py-0.5 text-14/4 font-semibold outline outline-1 outline-gray-200">
               2
             </span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link
-            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
-            href={"#"}
-          >
+          <div className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2">
             <span className="text-sm font-semibold">Alternatives</span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link
-            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
-            href={"#"}
-          >
+          <div className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2">
             <span className="text-sm font-semibold">Team</span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link
-            className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2"
-            href={"#"}
-          >
+          <div className="rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:bg-gray-200 hover:text-gray-700 flex items-center gap-2">
             <span className="text-sm font-semibold">Awards</span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link href={"#"} data-test="product-more-btn">
+          <div data-test="product-more-btn">
             <span className="text-14 font-semibold text-dark-gray rounded-full px-4 py-2 text-gray-500 transition-colors duration-300 hover:text-gray-700 hover:!bg-gray-200">
               More
             </span>
-          </Link>
+          </div>
         </li>
       </ul>
       <ShownedComponent product={product} />
@@ -170,8 +154,7 @@ const ShownedComponent = ({ product }: ProductTabsProps) => {
               </div>
               <div className="flex -space-x-2">
                 {product.makers.map((maker) => (
-                  <Link
-                    href={"#"}
+                  <div
                     key={maker.id}
                     className="h-8 w-8 border-2 border-background"
                   >
@@ -179,7 +162,7 @@ const ShownedComponent = ({ product }: ProductTabsProps) => {
                       <AvatarImage src={maker.avatar} alt={maker.name} />
                       <AvatarFallback>{maker.name.charAt(0)}</AvatarFallback>
                     </Avatar>
-                  </Link>
+                  </div>
                 ))}
               </div>
               <Button variant="outline" size="sm">
