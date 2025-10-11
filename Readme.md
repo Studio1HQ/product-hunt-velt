@@ -1,6 +1,6 @@
 # Product Hunt Velt Example (Next.js)
 
-A collaborative product hunt clone  built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration for modern SaaS applications.
+A collaborative product hunt clone  built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration applications.
 
 ---
 
