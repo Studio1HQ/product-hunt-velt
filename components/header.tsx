@@ -146,95 +146,91 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="flex items-center justify-end gap-2 lg:space-x-4">
-          <VeltCommentsSidebar darkMode={theme === "dark"} />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex items-center space-x-2 h-8 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:border dark:border-white/30 dark:!bg-[#121212] dark:hover:!bg-gray-700"
-              >
-                <Avatar className="w-5 h-5">
-                  <AvatarImage
-                    src={user?.photoUrl || "https://via.placeholder.com/100"}
-                    alt={user?.displayName || "User"}
-                  />
-                  <AvatarFallback className="text-xs">
-                    {user?.displayName}
-                  </AvatarFallback>
-                </Avatar>
-                <span className="text-sm truncate max-w-[100px]">
-                  {user?.displayName}
-                </span>
-                <ChevronDown size={14} />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="end"
-              className="w-64 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:bg-[#121212] dark:border dark:border-white/30"
-            >
-              <DropdownMenuLabel>Select User</DropdownMenuLabel>
-              <DropdownMenuSeparator className="dark:bg-white/40" />
-              {predefinedUsers.map((Currentuser) => (
-                <DropdownMenuItem
-                  key={Currentuser.uid}
-                  onClick={() => setUser(Currentuser)}
-                  className="flex items-center space-x-3 p-3 cursor-pointer hover:!bg-gray-100 hover:dark:!bg-[#121212] dark:hover:!bg-gray-700"
-                >
-                  <Avatar className="w-8 h-8">
-                    <AvatarImage
-                      src={Currentuser.photoUrl}
-                      alt={Currentuser.displayName
-                        .split(" ")
-                        .map((i) => i.charAt(0).toUpperCase())
-                        .join("")}
-                    />
-                    <AvatarFallback className="text-xs">
-                      {Currentuser.displayName
-                        .split(" ")
-                        .map((i) => i.charAt(0).toUpperCase())
-                        .join("")}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium text-gray-900 dark:text-white/70">
-                      {Currentuser.displayName}
-                    </div>
-                    <div className="text-xs text-gray-500 dark:text-white/60">
-                      {Currentuser.email}
-                    </div>
-                    <div className="text-xs text-gray-400 dark:text-white/50">
-                      User
-                    </div>
-                  </div>
-                  {user?.uid === Currentuser.uid && (
-                    <div className="w-2 h-2 bg-blue-600 rounded-full" />
-                  )}
-                </DropdownMenuItem>
-              ))}
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="flex items-center space-x-2 text-blue-600 hover:dark:bg-[#515881] ">
-                <User size={16} />
-                <span className="hover:dark:text-white/70">Manage Users</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+        <div className="flex items-center justify-between lg:space-x-4">
           <div className="hidden lg:flex gap-2">
             <VeltPresence />
             <VeltNotificationsTool darkMode={theme === "dark"} />
           </div>
-          <VeltSidebarButton darkMode={theme === "dark"} />
+          <VeltSidebarButton darkMode={theme === "dark"} className="m-0" />
           <div className="flex items-center gap-2">
             <Button variant="outline" className="hidden sm:inline-flex">
               Submit
             </Button>
             <ThemeToggleButton />
-            <Avatar className="h-6 w-6">
-              <AvatarImage src={user?.photoUrl} />
-              <AvatarFallback>{user?.displayName.split(" ").map(i=>i[0].toUpperCase()).join("")}</AvatarFallback>
-            </Avatar>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center space-x-2 h-8 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:border dark:border-white/30 dark:!bg-[#121212] dark:hover:!bg-gray-700"
+                >
+                  <Avatar className="w-5 h-5">
+                    <AvatarImage
+                      src={user?.photoUrl || "https://via.placeholder.com/100"}
+                      alt={user?.displayName || "User"}
+                    />
+                    <AvatarFallback className="text-xs">
+                      {user?.displayName}
+                    </AvatarFallback>
+                  </Avatar>
+                  <span className="text-sm truncate max-w-[100px]">
+                    {user?.displayName}
+                  </span>
+                  <ChevronDown size={14} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                className="w-64 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:bg-[#121212] dark:border dark:border-white/30"
+              >
+                <DropdownMenuLabel>Select User</DropdownMenuLabel>
+                <DropdownMenuSeparator className="dark:bg-white/40" />
+                {predefinedUsers.map((Currentuser) => (
+                  <DropdownMenuItem
+                    key={Currentuser.uid}
+                    onClick={() => setUser(Currentuser)}
+                    className="flex items-center space-x-3 p-3 cursor-pointer hover:!bg-gray-100 hover:dark:!bg-[#121212] dark:hover:!bg-gray-700"
+                  >
+                    <Avatar className="w-8 h-8">
+                      <AvatarImage
+                        src={Currentuser.photoUrl}
+                        alt={Currentuser.displayName
+                          .split(" ")
+                          .map((i) => i.charAt(0).toUpperCase())
+                          .join("")}
+                      />
+                      <AvatarFallback className="text-xs">
+                        {Currentuser.displayName
+                          .split(" ")
+                          .map((i) => i.charAt(0).toUpperCase())
+                          .join("")}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-gray-900 dark:text-white/70">
+                        {Currentuser.displayName}
+                      </div>
+                      <div className="text-xs text-gray-500 dark:text-white/60">
+                        {Currentuser.email}
+                      </div>
+                      <div className="text-xs text-gray-400 dark:text-white/50">
+                        User
+                      </div>
+                    </div>
+                    {user?.uid === Currentuser.uid && (
+                      <div className="w-2 h-2 bg-blue-600 rounded-full" />
+                    )}
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="flex items-center space-x-2 text-blue-600 hover:dark:bg-[#515881] ">
+                  <User size={16} />
+                  <span className="hover:dark:text-white/70">Manage Users</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
+          <VeltCommentsSidebar darkMode={theme === "dark"} />
         </div>
       </div>
     </header>

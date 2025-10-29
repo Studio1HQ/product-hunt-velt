@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MessageCircle, Heart, Flag, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -40,6 +39,13 @@ const mockComments = [
 export function CommentSection({ productId }: CommentSectionProps) {
   const [comments] = useState(mockComments);
   const { theme } = useTheme();
+  const commentsContainerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    // Scroll to the bottom when the component mounts and when comments are updated
+    commentsContainerRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [comments]);
+
   return (
     <Card>
       <CardHeader>
@@ -50,11 +56,7 @@ export function CommentSection({ productId }: CommentSectionProps) {
       </CardHeader>
       <CardContent className="space-y-6">
         <VeltInlineCommentsSection
-          // multiThread={true}
           targetElementId="container-id"
-          // shadowDom={false}
-          // dialogVariant="dialog-variant"
-          // variant="inline-section-variant"
           sortBy="createdAt"
           sortOrder="desc"
           darkMode={theme === "dark"}
@@ -136,8 +138,8 @@ export function CommentSection({ productId }: CommentSectionProps) {
             </div>
           ))}
         </div>
-        <section id="container-id">
-
+        <section id="container-id" ref={commentsContainerRef}>
+          {/* Any additional content if needed */}
         </section>
       </CardContent>
     </Card>
