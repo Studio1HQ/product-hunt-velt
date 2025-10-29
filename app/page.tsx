@@ -39,16 +39,14 @@ const productData = {
     {
       id: "1",
       name: "Szymon Pruszyński",
-      avatar:
-        "https://avatar.iran.liara.run/public/6",
+      avatar: "https://avatar.iran.liara.run/public/6",
       role: "Maker",
       verified: true,
     },
     {
       id: "2",
       name: "John Doe",
-      avatar:
-        "https://avatar.iran.liara.run/public/16",
+      avatar: "https://avatar.iran.liara.run/public/16",
       role: "Co-founder",
     },
   ],
