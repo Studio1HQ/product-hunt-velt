@@ -85,7 +85,7 @@ product-hunt-velt/
 
 ## Velt Integration
 
-This project uses Velt SDK v4.5.0-beta.14 for real-time collaboration features:
+This project uses Velt SDK v4.5.2-beta.12 for real-time collaboration features:
 
 ### Core Features
 
