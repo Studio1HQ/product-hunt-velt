@@ -39,7 +39,7 @@ A collaborative product hunt clone  built with Next.js, React, Tailwind CSS, and
 1. Clone the repository
 
    ```bash
-   git clone ------
+   git clone https://github.com/Studio1HQ/product-hunt-velt.git
    ```
 
 2. Navigate to the `product-hunt-velt` directory
