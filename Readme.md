@@ -1,11 +1,12 @@
-# Product Hunt Clone
-
-A modern, collaborative product discovery platform built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev). This project demonstrates real-time commenting, multi-user collaboration, and modern web application development practices.
-
+# Product Hunt Clone with Velt & Next.js
 ![Product Hunt Clone](https://img.shields.io/badge/Next.js-13.5-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-18.2-blue?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?style=flat-square&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-38bdf8?style=flat-square&logo=tailwind-css)
+
+A modern, collaborative product discovery platform built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev). This project demonstrates real-time commenting, multi-user collaboration, and modern web application development practices.
+
+
 
 ---
 
@@ -37,7 +38,6 @@ This is a full-featured Product Hunt clone that showcases:
 - **Multi-User Support**: Switch between user accounts to test collaboration features
 - **Product Management**: View product details, images, makers, reviews, and similar products
 
-For detailed product requirements and specifications, see [PRD.md](./PRD.md).
 
 ---
 
@@ -50,11 +50,6 @@ For detailed product requirements and specifications, see [PRD.md](./PRD.md).
 - 💬 **Real-Time Comments**: Add and view collaborative comments using Velt's inline commenting system
 - 🎨 **Dark/Light Theme**: Seamless theme switching with persistent preferences
 - 🔔 **Notifications**: In-app notifications powered by Velt for collaboration events
-- 🗳️ **Voting System**: Upvote products to show support and help them rank higher
-- 📱 **Responsive Design**: Fully responsive layout optimized for mobile, tablet, and desktop
-- 🔍 **Search Functionality**: Quick product search with keyboard shortcuts (⌘ + K)
-- 🏷️ **Product Categories**: Browse products by categories and tags
-- 📊 **Product Rankings**: Daily product rankings and launch status
 
 ### UI Components
 
